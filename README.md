@@ -23,6 +23,21 @@ python-ci-cd-hello-world/
 ├── README.md
 └── setup.cfg
 ```
+## How a Commit moves throught the Github Actions
+
+```mermaid
+graph LR
+    A[Commit is Pushed] -->|Triggers| B[GitHub Actions Workflow]
+    B --> C[Job: Build]
+    C --> D[Checkout Code]
+    D --> E[Set Up Python]
+    E --> F[Install Dependencies]
+    F --> G[Lint Code with Flake8]
+    G --> H[Format Code with Black]
+    H --> I[Run Tests]
+    I --> J[Upload Coverage to Codecov]
+    J --> K[Workflow Completes]
+```
 
 ## Getting Started
 
